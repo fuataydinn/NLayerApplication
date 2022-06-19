@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 
 namespace NLayer.Repository
 {
-    public class AppDbContext :DbContext
+    public class AppDbContext : DbContext
     {
-        public AppDbContext(DbContextOptions<AppDbContext> options) :base(options)  //Basedeki options'a yolluyoruz
+        //private const string connectionString = "Server=(localdb)\\mssqllocaldb;Database=NLayerApplication;Integrated Security=true;";
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)  //Basedeki options'a yolluyoruz
         {
-        //Bu optionsla beraber veri tabanı yolunu startup'ta vermek icin bu constructor'ı olusturmamız gerekiyordu
-
+            //Bu optionsla beraber veri tabanı yolunu startup'ta vermek icin bu constructor'ı olusturmamız gerekiyordu
         }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
@@ -27,12 +27,18 @@ namespace NLayer.Repository
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
 
             modelBuilder.Entity<ProductFeature>().HasData(
-                new ProductFeature() { Id = 1, Color = "Kırmızı", Height = 100, Width = 200,ProductId=1 },
-                new ProductFeature() { Id = 2, Color = "Mavi", Height = 300, Width = 200,ProductId=2 }
-                      
+                new ProductFeature() { Id = 1, Color = "Kırmızı", Height = 100, Width = 200, ProductId = 1 },
+                new ProductFeature() { Id = 2, Color = "Mavi", Height = 300, Width = 200, ProductId = 2 }
+
                 );  //istersek buradan da seed data olusturabiliriz'i gormek icin bunu yaptık
 
             base.OnModelCreating(modelBuilder);
         }
+
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    base.OnConfiguring(optionsBuilder); 
+        //    optionsBuilder.UseSqlServer(connectionString);
+        //}
     }
 }

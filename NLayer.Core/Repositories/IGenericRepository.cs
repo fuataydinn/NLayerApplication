@@ -10,7 +10,7 @@ namespace NLayer.Core.Repositories
     public interface IGenericRepository<T> where T : class
     {
         //productRepository.GetAll(x=>x.id>5).ToList();
-        IQueryable<T> GetAll(Expression<Func<T, bool>> expression);
+        IQueryable<T> GetAll();
         Task<T> GetByIdAsync(int id);
         //Burada direk veri tabanına sorgu yapmadıgımız icin asenkron degil
 
@@ -21,7 +21,7 @@ namespace NLayer.Core.Repositories
         Task<bool> AnyAsync(Expression<Func<T, bool>> expression); //Var mı ? Yok mu ? 
         void Update(T entity); //Update ve remove asenkron metod degıl, bunlarda ef'de sadece state'i degistigi icin 
         //Database'i yoran islemler degildir.
-        void Delete(T entity);   
+        void Remove(T entity);   
         void RemoveRange(IEnumerable<T> entities);
 
     }

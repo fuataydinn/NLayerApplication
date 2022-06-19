@@ -14,7 +14,7 @@ namespace NLayer.Repository.Repositories
 
         //Bunu protected tanımladık, cunku custom repolarda olacak ilerde bunu da miras alıcaz.
         //protected erisim belirleyici, miras alan sınıf erisebilir.
-        protected readonly AppDbContext _context;
+        protected readonly AppDbContext _context; //db ile ilgili islem yapabilmek icin buna ihtiyac var 
         private readonly DbSet<T> _dbSet; //veri tabanındaki tabloya karsılık geliyor
 
         public GenericRepository(AppDbContext context)
@@ -23,49 +23,50 @@ namespace NLayer.Repository.Repositories
             _dbSet = _context.Set<T>();
         }
 
-        public Task AddAsync(T entity)
+        public async Task AddAsync(T entity)
         {
-            throw new NotImplementedException();
+           await _dbSet.AddAsync(entity);  
         }
 
-        public Task AddRangeAsync(IEnumerable<T> entities)
+        public async Task AddRangeAsync(IEnumerable<T> entities)
         {
-            throw new NotImplementedException();
+           await _dbSet.AddRangeAsync(entities);
         }
 
-        public Task<bool> AnyAsync(Expression<Func<T, bool>> expression)
+        public async Task<bool> AnyAsync(Expression<Func<T, bool>> expression)
         {
-            throw new NotImplementedException();
+            return await _dbSet.AnyAsync(expression);   
         }
 
-        public void Delete(T entity)
+        public IQueryable<T> GetAll()
         {
-            throw new NotImplementedException();
+            return _dbSet.AsNoTracking().AsQueryable();
         }
 
-        public IQueryable<T> GetAll(Expression<Func<T, bool>> expression)
+        public async Task<T> GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+          return await _dbSet.FindAsync(id);
         }
 
-        public Task<T> GetByIdAsync(int id)
+        public void Remove(T entity)
         {
-            throw new NotImplementedException();
+           _dbSet.Remove(entity);
         }
 
         public void RemoveRange(IEnumerable<T> entities)
         {
-            throw new NotImplementedException();
+          // _context.Entry(entities).State = EntityState.Deleted; Asagdaki ile bu metot aynı isi yapıyor 
+          _dbSet.RemoveRange(entities); // burada silmiyor db'den sadece durumunu remove yapıyor.
         }
 
         public void Update(T entity)
         {
-            throw new NotImplementedException();
+            _dbSet.Update(entity);
         }
 
         public IQueryable<T> Where(Expression<Func<T, bool>> expression)
         {
-            throw new NotImplementedException();
+            return _dbSet.Where(expression); //Where zaten kendisi IQueryable donuyor
         }
     }
 }

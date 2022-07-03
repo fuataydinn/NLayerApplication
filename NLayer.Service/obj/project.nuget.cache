@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "pFQGAR3tHzBGuKqtj9cKieam7d0dDkN0kdCUx3pPc3XxzmcTJAej98fW2FzxjiMkXSO/zToX2CC+r2CbIcqYJw==",
+  "dgSpecHash": "cw/080zE087gHbkk28e2fi5yEBjDe3lRwHZjFhuGGjelwMKL5/MwYvE03CWY75uYXITLPGjD3+o/tnh1LaZnAg==",
   "success": true,
   "projectFilePath": "C:\\Users\\faydn\\source\\repos\\NLayerApplication\\NLayer.Service\\NLayer.Service.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\faydn\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
     "C:\\Users\\faydn\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
+    "C:\\Users\\faydn\\.nuget\\packages\\fluentvalidation\\11.1.0\\fluentvalidation.11.1.0.nupkg.sha512",
+    "C:\\Users\\faydn\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.1.1\\fluentvalidation.aspnetcore.11.1.1.nupkg.sha512",
+    "C:\\Users\\faydn\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.1.0\\fluentvalidation.dependencyinjectionextensions.11.1.0.nupkg.sha512",
     "C:\\Users\\faydn\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\faydn\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
     "C:\\Users\\faydn\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.1.1\\microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",

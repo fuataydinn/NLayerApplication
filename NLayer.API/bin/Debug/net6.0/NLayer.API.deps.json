@@ -8,13 +8,37 @@
     ".NETCoreApp,Version=v6.0": {
       "NLayer.API/1.0.0": {
         "dependencies": {
+          "Autofac.Extensions.DependencyInjection": "8.0.0",
           "Microsoft.EntityFrameworkCore": "6.0.1",
           "Microsoft.EntityFrameworkCore.Design": "6.0.1",
-          "NLayer.Service": "1.0.0",
+          "NLayer.Caching": "1.0.0",
           "Swashbuckle.AspNetCore": "6.2.3"
         },
         "runtime": {
           "NLayer.API.dll": {}
+        }
+      },
+      "Autofac/6.4.0": {
+        "dependencies": {
+          "System.Diagnostics.DiagnosticSource": "6.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/Autofac.dll": {
+            "assemblyVersion": "6.4.0.0",
+            "fileVersion": "6.4.0.0"
+          }
+        }
+      },
+      "Autofac.Extensions.DependencyInjection/8.0.0": {
+        "dependencies": {
+          "Autofac": "6.4.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/Autofac.Extensions.DependencyInjection.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.0.0"
+          }
         }
       },
       "AutoMapper/11.0.0": {
@@ -37,6 +61,38 @@
           "lib/netstandard2.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {
             "assemblyVersion": "11.0.0.0",
             "fileVersion": "11.0.0.0"
+          }
+        }
+      },
+      "FluentValidation/11.1.0": {
+        "runtime": {
+          "lib/net6.0/FluentValidation.dll": {
+            "assemblyVersion": "11.0.0.0",
+            "fileVersion": "11.1.0.0"
+          }
+        }
+      },
+      "FluentValidation.AspNetCore/11.1.1": {
+        "dependencies": {
+          "FluentValidation": "11.1.0",
+          "FluentValidation.DependencyInjectionExtensions": "11.1.0"
+        },
+        "runtime": {
+          "lib/net6.0/FluentValidation.AspNetCore.dll": {
+            "assemblyVersion": "11.0.0.0",
+            "fileVersion": "11.1.1.0"
+          }
+        }
+      },
+      "FluentValidation.DependencyInjectionExtensions/11.1.0": {
+        "dependencies": {
+          "FluentValidation": "11.1.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.1/FluentValidation.DependencyInjectionExtensions.dll": {
+            "assemblyVersion": "11.0.0.0",
+            "fileVersion": "11.1.0.0"
           }
         }
       },
@@ -493,6 +549,14 @@
           }
         }
       },
+      "NLayer.Caching/1.0.0": {
+        "dependencies": {
+          "NLayer.Service": "1.0.0"
+        },
+        "runtime": {
+          "NLayer.Caching.dll": {}
+        }
+      },
       "NLayer.Core/1.0.0": {
         "runtime": {
           "NLayer.Core.dll": {}
@@ -511,6 +575,7 @@
       "NLayer.Service/1.0.0": {
         "dependencies": {
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "11.0.0",
+          "FluentValidation.AspNetCore": "11.1.1",
           "NLayer.Repository": "1.0.0"
         },
         "runtime": {
@@ -525,6 +590,20 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Autofac/6.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-tkFxl6wAPuwVhrlN8wuNADnd+k2tv4ReP7ZZSL0vjfcN0RcfC9v25ogxK6b03HC7D4NwWjSLf1G/zTG8Bw43wQ==",
+      "path": "autofac/6.4.0",
+      "hashPath": "autofac.6.4.0.nupkg.sha512"
+    },
+    "Autofac.Extensions.DependencyInjection/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-nGrXNpQX2FiZpIBydK9cxZnnoqP/cUd3k/53uRERYEqLtWzKtE15R6L+j5q5ax5Rv/+3wAIkOaPePkahfqrwjg==",
+      "path": "autofac.extensions.dependencyinjection/8.0.0",
+      "hashPath": "autofac.extensions.dependencyinjection.8.0.0.nupkg.sha512"
+    },
     "AutoMapper/11.0.0": {
       "type": "package",
       "serviceable": true,
@@ -538,6 +617,27 @@
       "sha512": "sha512-0asw5WxdCFh2OTi9Gv+oKyH9SzxwYQSnO8TV5Dd0GggovILzJW4UimP26JAcxc3yB5NnC5urooZ1BBs8ElpiBw==",
       "path": "automapper.extensions.microsoft.dependencyinjection/11.0.0",
       "hashPath": "automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512"
+    },
+    "FluentValidation/11.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Ld7w+2jOmnhQqFkngEGuEWTRa5j6u4Xzli7jKxRtbA5PtuHHcpin01qxvxYL0LomeJuzRMGAOURu2rKONdjKQA==",
+      "path": "fluentvalidation/11.1.0",
+      "hashPath": "fluentvalidation.11.1.0.nupkg.sha512"
+    },
+    "FluentValidation.AspNetCore/11.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-mgNuILN7UIcmaFLhoB7nDaDTO26r1ze7IwNELm3VWSQCZdotYqYFlY4mMbl0ryrbcNjAM5uummqtQQekOJAu3g==",
+      "path": "fluentvalidation.aspnetcore/11.1.1",
+      "hashPath": "fluentvalidation.aspnetcore.11.1.1.nupkg.sha512"
+    },
+    "FluentValidation.DependencyInjectionExtensions/11.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-M9U2hLZc8bx0JthQKsN9SVgQSHJeLMcSV/uCmJ23U+/7HCSeOYD4OXoF+p5U3bLGz6Yp7h0/0XbSL+Qv2S38EQ==",
+      "path": "fluentvalidation.dependencyinjectionextensions/11.1.0",
+      "hashPath": "fluentvalidation.dependencyinjectionextensions.11.1.0.nupkg.sha512"
     },
     "Humanizer.Core/2.8.26": {
       "type": "package",
@@ -874,6 +974,11 @@
       "sha512": "sha512-CeWTdRNfRaSh0pm2gDTJFwVaXfTq6Xwv/sA887iwPTneW7oMtMlpvDIO+U60+3GWTB7Aom6oQwv5VZVUhQRdPQ==",
       "path": "system.windows.extensions/4.7.0",
       "hashPath": "system.windows.extensions.4.7.0.nupkg.sha512"
+    },
+    "NLayer.Caching/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "NLayer.Core/1.0.0": {
       "type": "project",
